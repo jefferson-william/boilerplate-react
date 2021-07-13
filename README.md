@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+# Boilerplate React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Basic commands](#basic-commands)
+- [Branch flow](#branch-flow)
+- [VSCode](#vscode)
+  - [Debug](#debug)
+- [Boilerplate creation process](#boilerplate-creation-process)
+- [References](#references)
 
-## Available Scripts
+### Basic commands
 
-In the project directory, you can run:
+```bash
+nvm use
+yarn dev # http://localhost:3000
+yarn test
+yarn build
+yarn start
+```
 
-### `yarn start`
+### Branch flow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`master`: basic structure (cra, pwa, msw, jest, babel, typescript, eslint, stylelint)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`material-ui`: material-ui applied
 
-### `yarn test`
+#### VSCode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add the settings that suit you. The most important is about stylelint.
 
-### `yarn build`
+```
+"javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.tabSize": 2,
+  "editor.rulers": [120],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.npm": false,
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "javascript": "css",
+    "vue-html": "html",
+    "razor": "html",
+    "plaintext": "jade"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescript": "jsx",
+    "typescriptreact": "jsx",
+    "jsx": {
+      "self_closing_tag": true
+    }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Debug
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Create the `/.vscode/launch.json` file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Remember to change `<user-name>` to the username of your environment and make sure you are using `nvm` as applied in `runtimeExecutable`.
 
-### `yarn eject`
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "userDataDir": true
+    },
+    {
+      "name": "Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "/Users/<your-user-name>/.nvm/versions/node/v14.17.3/bin/yarn",
+      "runtimeArgs": ["test", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9230
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Current File",
+      "runtimeExecutable": "/Users/<your-user-name>/.nvm/versions/node/v14.17.3/bin/yarn",
+      "args": ["test", "${fileBasenameNoExtension}", "--detectOpenHandles"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "All",
+      "configurations": ["Launch Chrome", "Jest Tests"]
+    }
+  ]
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Boilerplate creation process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npx create-react-app boilerplate-react --template cra-template-pwa-typescript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+yarn add -D @babel/cli @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript @babel/runtime @commitlint/cli @commitlint/config-conventional @testing-library/dom @testing-library/jest-dom @testing-library/react @types/jest @types/node @types/react @types/react-router-dom @types/react-dom @types/styled-components @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-jest babel-loader babel-plugin-import babel-plugin-styled-components commitizen cz-conventional-changelog eslint eslint-config-airbnb eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-import-helpers eslint-import-resolver-typescript husky jest jest-transform-stub jest-styled-components lint-staged mutationobserver-shim prettier stylelint stylelint-config-prettier stylelint-config-rational-declaration stylelint-config-recommended stylelint-config-recommended-scss stylelint-order stylelint-prettier stylelint-scss ts-jest ts-loader typescript @hot-loader/react-dom react-app-rewire-hot-loader customize-cra react-app-rewired react-app-rewire-aliases babel-plugin-module-resolver msw jest-watch-typeahead
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+yarn add @material-ui/core history react react-dom react-router-dom react-hot-loader styled-components workbox-background-sync workbox-broadcast-update workbox-cacheable-response workbox-core workbox-expiration workbox-google-analytics workbox-navigation-preload workbox-precaching workbox-range-requests workbox-routing workbox-strategies workbox-streams
+```
 
-## Learn More
+### References
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- https://create-react-app.dev/docs/adding-typescript/
+- https://create-react-app.dev/docs/making-a-progressive-web-app/

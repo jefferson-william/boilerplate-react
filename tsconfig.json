@@ -1,4 +1,5 @@
 {
+  "extends": "./tspaths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -6,13 +7,27 @@
       "dom.iterable",
       "esnext"
     ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/@types/**/*"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -21,6 +36,22 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "webpack*.js",
+    "*.config.js",
+    "scripts",
+    "**/*.story.tsx",
+    "**/*.spec.tsx",
+    "**/*.test.tsx"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "./src/service-worker.ts",
+      "./src/serviceWorkerRegistration.ts"
+    ]
+  }
 }
