@@ -12,8 +12,9 @@
     "dev": "concurrently --kill-others-on-fail 'yarn project dev'",
     "build": "concurrently --kill-others-on-fail 'yarn project build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start'",
-    "lint": "concurrently --kill-others-on-fail 'yarn project lint'",
-    "test": "CI=true concurrently --kill-others-on-fail 'yarn project test'",
+    "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint'",
+    "test": "CI=true concurrently --kill-others-on-fail 'yarn project test' 'yarn core test'",
+    "types": "CI=true concurrently --kill-others-on-fail 'yarn project types' 'yarn core types'",
     "core": "yarn workspace @app/core",
     "project": "yarn workspace @app/project"
   },

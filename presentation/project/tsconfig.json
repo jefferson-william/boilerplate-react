@@ -44,7 +44,6 @@
     "webpack*.js",
     "*.config.js",
     "scripts",
-    "**/*.story.tsx",
     "**/*.spec.tsx",
     "**/*.test.tsx"
   ],

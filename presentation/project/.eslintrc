@@ -44,7 +44,7 @@
     "import/no-extraneous-dependencies": [
       "off",
       {
-        "devDependencies": ["**/*.test.ts", "**/*.spec.{ts,tsx}", "**/*.story.{ts,tsx}"]
+        "devDependencies": ["**/*.test.ts", "**/*.spec.{ts,tsx}"]
       }
     ],
     "no-restricted-imports": [

@@ -116,8 +116,7 @@
     "stylelint-prettier": "1.2.0",
     "stylelint-scss": "3.19.0",
     "ts-jest": "27.0.3",
-    "ts-loader": "9.2.3",
-    "yarn": "1.22.10"
+    "ts-loader": "9.2.3"
   },
   "browserslist": {
     "production": [

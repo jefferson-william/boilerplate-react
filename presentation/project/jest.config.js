@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   clearMocks: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx,js,jsx}'],
@@ -12,9 +14,7 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      tsconfig: {
-        allowJs: true,
-      },
+      tsConfig: path.resolve(__dirname, 'src', 'tsconfig.json'),
     },
   },
   modulePaths: ['node_modules', 'src', '.', 'src/@types'],
