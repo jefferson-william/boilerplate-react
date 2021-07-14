@@ -5,7 +5,7 @@ import { HomePage } from './index'
 test('renders learn react link', () => {
   render(<HomePage />)
 
-  const linkElement = screen.getByText(/learn react/i)
+  const linkElement = screen.getByText(/material-ui/i)
 
   expect(linkElement).toBeInTheDocument()
 })
