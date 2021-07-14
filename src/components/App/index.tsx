@@ -6,14 +6,18 @@ import history from '~/lib/history'
 import { Routers } from '~/routers'
 import { GlobalStyles } from '~/styles/global'
 import { defaultTheme } from '~/styles/themes/default'
+import { DefaultSuspense } from '~/components/DefaultSuspense'
+import '~/i18n'
 
 const Application: React.FC = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles />
-      <CssBaseline />
-      <Routers history={history} />
-    </ThemeProvider>
+    <DefaultSuspense>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
+        <CssBaseline />
+        <Routers history={history} />
+      </ThemeProvider>
+    </DefaultSuspense>
   )
 }
 
