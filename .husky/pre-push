@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn types && CI=true yarn test
+yarn types && CI=true yarn test --runInBand
