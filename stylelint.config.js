@@ -7,7 +7,6 @@ module.exports = {
     'stylelint-config-rational-declaration',
     'stylelint-config-prettier',
   ],
-  ignoreFiles: ['node_modules/**', 'coverage/**', 'build/**', 'dist/**', '.next/**'],
   rules: {
     'string-quotes': 'single',
     'no-empty-source': null,

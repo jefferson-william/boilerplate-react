@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{ts,tsx}': ['yarn lint', 'yarn fix-styles', 'git add .'],
+  '*.{ts,tsx}': ['yarn pretty-quick --staged', 'yarn lint', 'yarn stylelint', 'git add'],
 }

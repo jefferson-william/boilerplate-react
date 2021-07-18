@@ -1,20 +1,21 @@
 # It would be nice to remove this file and use .gitignore instead however we need to add package.json and __fixtures__
 
-/node_modules
+node_modules
+coverage
+dist
+build
+tmp
 /config.js
-/coverage
-/dist
-/build
-/tmp
 .git
+.next
 .DS_Store
 .cache
 /*.log
 package.json
 **/__fixtures__/
-**/__mocks__/
 bin/yarn*
 .clinic/
+tsconfig.json
 
 # generated code
 **/*.generated.ts

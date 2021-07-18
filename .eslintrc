@@ -19,7 +19,7 @@
     "jest/globals": true
   },
   "parserOptions": {
-    "project": ["./tsconfig.eslint.json"],
+    "project": ["./tsconfig.json"],
     "sourceType": "module",
     "ecmaVersion": 2020,
     "ecmaFeatures": {
@@ -27,13 +27,14 @@
       "jsx": true
     }
   },
-  "ignorePatterns": ["setup/", "scripts/", "*.config.js"],
+  "ignorePatterns": [],
   "rules": {
     "react/prop-types": "off",
     "react/no-render-return-value": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
     "react/jsx-key": "warn",
+    "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".js", ".ts", ".tsx"] }],
@@ -44,7 +45,7 @@
     "import/no-extraneous-dependencies": [
       "off",
       {
-        "devDependencies": ["**/*.test.ts", "**/*.spec.{ts,tsx}", "**/*.story.{ts,tsx}"]
+        "devDependencies": ["**/*.test.ts", "**/*.spec.{ts,tsx}"]
       }
     ],
     "no-restricted-imports": [
