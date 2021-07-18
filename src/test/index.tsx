@@ -12,7 +12,7 @@ export const myRender = (
     ...options,
   }
 
-  allOptions.theme = options?.theme || {}
+  allOptions.theme = options?.theme || undefined
 
   const rendered = render<MyQueries, HTMLElement>(Component, {
     wrapper: Providers(allOptions),
