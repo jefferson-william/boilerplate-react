@@ -23,9 +23,9 @@
     "presentation/project"
   ],
   "dependencies": {
-    "concurrently": "6.1.0"
+    "concurrently": "6.2.0"
   },
   "devDependencies": {
-    "@types/node": "15.6.0"
+    "@types/node": "16.3.3"
   }
 }
