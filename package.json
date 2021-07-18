@@ -13,10 +13,12 @@
     "build": "concurrently --kill-others-on-fail 'yarn project build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint'",
-    "test": "CI=true concurrently --kill-others-on-fail 'yarn project test' 'yarn core test'",
+    "test": "CI=true concurrently --kill-others-on-fail 'yarn project test --runInBand' 'yarn core test --runInBand'",
     "types": "CI=true concurrently --kill-others-on-fail 'yarn project types' 'yarn core types'",
     "core": "yarn workspace @app/core",
-    "project": "yarn workspace @app/project"
+    "project": "yarn workspace @app/project",
+    "pre-commit": "lint-staged",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "core",
@@ -26,6 +28,18 @@
     "concurrently": "6.2.0"
   },
   "devDependencies": {
-    "@types/node": "16.3.3"
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
+    "@types/jest": "26.0.24",
+    "@types/node": "16.3.3",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "7.0.1",
+    "lint-staged": "11.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
