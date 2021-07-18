@@ -1,3 +1,7 @@
+// @ts-nocheck
+// @ts-ignore
+/* eslint-disable */
+
 // ref: https://gist.github.com/LauraBeatris/b41e6ee76af9a56d6dd25873bbe4cecf
 import React from 'react'
 import reactI18next from 'react-i18next'
