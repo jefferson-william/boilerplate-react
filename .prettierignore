@@ -15,6 +15,7 @@ package.json
 **/__fixtures__/
 bin/yarn*
 .clinic/
+tsconfig.json
 
 # generated code
 **/*.generated.ts
