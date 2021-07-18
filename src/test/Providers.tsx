@@ -7,7 +7,7 @@ export function Providers(allOptions: MyRenderOptions | undefined = {}): React.F
   const Wrap: React.FC = ({ children }) => {
     return (
       <MemoryRouter {...allOptions.memoryRouterOptions}>
-        <ThemeProvider theme={allOptions.theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={allOptions.theme || {}}>{children}</ThemeProvider>
       </MemoryRouter>
     )
   }
