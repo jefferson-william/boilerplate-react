@@ -2,15 +2,8 @@
   "extends": "./tspaths.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "src/@types/**/*"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": ["./node_modules/@types", "src/@types/**/*"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -35,22 +28,9 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "webpack*.js",
-    "*.config.js",
-    "scripts",
-    "**/*.spec.tsx",
-    "**/*.test.tsx"
-  ],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.js", "./src/**/*.jsx"],
+  "exclude": ["node_modules", "dist", "webpack*.js", "*.config.js", "scripts"],
   "linterOptions": {
-    "exclude": [
-      "./src/service-worker.ts",
-      "./src/serviceWorkerRegistration.ts"
-    ]
+    "exclude": ["./src/service-worker.ts", "./src/serviceWorkerRegistration.ts"]
   }
 }
