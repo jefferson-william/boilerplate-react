@@ -36,17 +36,17 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.js",
+    "./src/**/*.jsx"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "webpack*.js",
     "*.config.js",
-    "scripts",
-    "**/*.story.tsx",
-    "**/*.spec.tsx",
-    "**/*.test.tsx"
+    "scripts"
   ],
   "linterOptions": {
     "exclude": [

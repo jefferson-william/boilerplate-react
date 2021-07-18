@@ -1,5 +1,4 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '~/test'
 import { HomePage } from './index'
 
 test('renders learn react link', () => {
