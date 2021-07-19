@@ -1,4 +1,4 @@
-import { EmptyUseCase } from '~/domain/usecase/empty'
+import { EmptyUseCase } from '~/Auth/domain/usecase/empty'
 
 test('true should return true', () => {
   const emptyUseCase = new EmptyUseCase()
