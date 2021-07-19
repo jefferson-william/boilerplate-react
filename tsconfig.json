@@ -1,11 +1,7 @@
 {
   "extends": "@app/core/main/config/tsconfig.base.json",
   "compilerOptions": {
-    "typeRoots": ["../node_modules/@types"],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["*"]
-    }
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": ["node_modules", "dist", ".next", ".git"]

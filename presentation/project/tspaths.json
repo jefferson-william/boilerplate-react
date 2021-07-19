@@ -1,5 +1,10 @@
 {
+  "extends": "@app/core/main/config/tsconfig.base.json",
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/@types/**/*"
+    ],
     "baseUrl": ".",
     "paths": {
       "~/*": [

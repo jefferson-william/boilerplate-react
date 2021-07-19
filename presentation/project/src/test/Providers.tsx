@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { MemoryRouter } from 'react-router-dom'
-import { MyRenderOptions } from '~/test/index.d'
+import { MyRenderOptions } from '~/test/props.d'
 
 export function Providers(allOptions: MyRenderOptions | undefined = {}): React.FC {
   const Wrap: React.FC = ({ children }) => {

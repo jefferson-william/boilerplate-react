@@ -1,12 +1,12 @@
-import { MemoryRouterOptions } from 'react-router-dom'
+import { MemoryRouterProps } from 'react-router-dom'
 import { Theme } from '@material-ui/core'
 
 export interface MyRenderOptions {
-  memoryRouterOptions?: MemoryRouterOptions
+  memoryRouterOptions?: MemoryRouterProps
   theme?: Theme
 }
 
 export interface MyRenderedOptions {
-  memoryRouterOptions?: MemoryRouterOptions
+  memoryRouterOptions?: MemoryRouterProps
   theme?: Theme
 }
