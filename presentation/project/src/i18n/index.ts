@@ -26,4 +26,6 @@ i18n
     },
   }))
 
+i18n.changeLanguage('ptbr')
+
 export default i18n
