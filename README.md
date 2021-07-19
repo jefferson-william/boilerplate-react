@@ -10,6 +10,8 @@
 ### Basic commands
 
 ```bash
+cp .env.example .env
+cp .env.production.local.example .env.production.local
 nvm use
 yarn dev # http://localhost:3000
 yarn test
