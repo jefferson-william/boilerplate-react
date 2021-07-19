@@ -22,7 +22,7 @@
   },
   "workspaces": [
     "core",
-    "presentation/project"
+    "presentation/presenter/project"
   ],
   "dependencies": {
     "concurrently": "6.2.0"
