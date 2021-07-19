@@ -1,0 +1,13 @@
+{
+  "name": "@app/vendor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn start",
+    "start": "serve -p 2000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "12.0.0"
+  }
+}
