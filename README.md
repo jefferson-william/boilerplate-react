@@ -19,7 +19,6 @@
 cp presentation/ui/react/.env.example presentation/ui/react/.env
 cp presentation/presenter/project/.env.example presentation/presenter/project/.env
 cp presentation/presenter/project/.env.production.local.example presentation/presenter/project/.env.production.local
-cp presentation/ui/react/.env.example presentation/ui/react/.env
 nvm install ; nvm use
 yarn ; yarn dev
 yarn test
