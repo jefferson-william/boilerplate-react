@@ -19,9 +19,17 @@ yarn start
 
 ### Branch flow
 
-`master`: basic structure (cra, pwa, msw, jest, babel, typescript, eslint, stylelint)
+[master](https://github.com/jefferson-william/boilerplate-react): basic structure (cra, pwa, msw, jest, babel, typescript, eslint, stylelint)
 
-`material-ui`: material-ui applied
+[material-ui](https://github.com/jefferson-william/boilerplate-react/tree/material-ui): material-ui applied
+
+[i18n](https://github.com/jefferson-william/boilerplate-react/tree/i18n): react-i18next applied
+
+[all](https://github.com/jefferson-william/boilerplate-react/tree/all): < i18n < material-ui < master
+
+[clean-arch](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch): < all
+
+[clean-arch-global-lints](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-global-lints): < clean-arch
 
 #### VSCode
 

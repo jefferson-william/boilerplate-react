@@ -1,0 +1,10 @@
+.git
+.next
+node_modules
+coverage
+dist
+build
+*.ts
+*.tsx
+!**/styles
+!**/components
