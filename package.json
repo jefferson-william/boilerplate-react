@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "concurrently --kill-others-on-fail 'yarn project dev' 'yarn react dev'",
-    "build": "concurrently --kill-others-on-fail 'yarn project build' 'yarn react build'",
+    "build": "concurrently --kill-others-on-fail 'yarn project build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint' 'yarn react lint'",
     "test": "CI=true concurrently --kill-others-on-fail 'yarn project test --runInBand' 'yarn core test --runInBand'  'yarn react test --runInBand'",
