@@ -1,0 +1,9 @@
+.git
+.next
+node_modules
+coverage
+dist
+build
+setupTests.ts
+service-worker.ts
+serviceWorkerRegistration.ts

@@ -1,0 +1,11 @@
+.git
+.next
+.eslintrc
+node_modules
+coverage
+dist
+build
+*.config.js
+setupTests.ts
+service-worker.ts
+serviceWorkerRegistration.ts
