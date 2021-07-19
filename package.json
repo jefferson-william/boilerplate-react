@@ -9,15 +9,16 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn project dev' 'yarn react dev'",
+    "dev": "concurrently --kill-others-on-fail 'yarn project dev' 'yarn react dev' 'yarn vendor dev'",
     "build": "concurrently --kill-others-on-fail 'yarn project build'",
-    "start": "concurrently --kill-others-on-fail 'yarn project start'",
+    "start": "concurrently --kill-others-on-fail 'yarn project start' 'yarn vendor start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint' 'yarn react lint'",
     "test": "CI=true concurrently --kill-others-on-fail 'yarn project test --runInBand' 'yarn core test --runInBand'  'yarn react test --runInBand'",
     "types": "CI=true concurrently --kill-others-on-fail 'yarn project types' 'yarn core types' 'yarn react types'",
     "core": "yarn workspace @app/core",
     "project": "yarn workspace @app/project",
     "react": "yarn workspace @app/react",
+    "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
     "pretty-quick": "pretty-quick",
     "postinstall": "husky install"
@@ -25,6 +26,7 @@
   "workspaces": [
     "core",
     "shared",
+    "shared/vendor",
     "presentation/presenter/project",
     "presentation/ui/react"
   ],

@@ -1,4 +1,4 @@
-import { render, screen } from '~/test'
+import { render, screen } from '@app/react/src/test'
 import { HomePage } from './index'
 
 test('renders learn react link', () => {
