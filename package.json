@@ -24,6 +24,7 @@
   },
   "workspaces": [
     "core",
+    "shared",
     "presentation/presenter/project",
     "presentation/ui/react"
   ],
