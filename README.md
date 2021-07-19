@@ -29,6 +29,8 @@ yarn start
 
 [clean-arch](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch): < all
 
+[clean-arch-global-lints](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-global-lints): < clean-arch
+
 #### VSCode
 
 Add the settings that suit you. The most important is about stylelint.
