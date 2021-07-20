@@ -1,1 +1,1 @@
-import '@app/react/src/setupTests'
+import '@app/framework-react/src/setupTests'
