@@ -7,25 +7,28 @@ i18n
   .use(initReactI18next)
   .use(languageDetector)
   .use(backend)
-  .init(() => ({
-    debug: true,
-    fallbackLng: 'ptbr',
-    keySeparator: true,
-    defaultNS: 'ptbr',
-    ns: 'ptbr',
-    fallbackNS: 'ptbr',
-    interpolation: {
-      escapeValue: false,
+  .init(
+    {
+      debug: true,
+      lng: 'ptbr',
+      fallbackLng: 'ptbr',
+      keySeparator: '.',
+      ns: 'translation',
+      defaultNS: 'translation',
+      fallbackNS: 'translation',
+      preload: ['ptbr'],
+      interpolation: {
+        escapeValue: false,
+      },
+      react: {
+        useSuspense: false,
+        wait: false,
+      },
+      backend: {
+        loadPath: () => `${process.env.REACT_APP_VENDOR_URL}/locales/{{lng}}/{{ns}}.json`,
+      },
     },
-    react: {
-      useSuspense: false,
-      wait: false,
-    },
-    backend: {
-      loadPath: `${process.env.REACT_APP_VENDOR_URL}/locales/{{lng}}/{{ns}}.json`,
-    },
-  }))
-
-i18n.changeLanguage('ptbr')
+    () => {},
+  )
 
 export default i18n

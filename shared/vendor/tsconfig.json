@@ -1,0 +1,13 @@
+{
+  "extends": "@app/shared/config/tsconfig.base.json",
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types"],
+    "isolatedModules": false,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "dist", ".next", ".git"]
+}
