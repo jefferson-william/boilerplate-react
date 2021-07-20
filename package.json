@@ -29,6 +29,7 @@
     "shared",
     "shared/vendor",
     "presentation/presenter/project",
+    "presentation/framework/react",
     "presentation/ui/react"
   ],
   "dependencies": {
