@@ -9,7 +9,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn project dev' 'yarn react dev' 'yarn vendor dev'",
+    "dev": "concurrently --kill-others-on-fail 'yarn vendor dev' 'yarn project dev' 'yarn react dev' 'yarn old dev'",
     "build": "concurrently --kill-others-on-fail 'yarn project build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start' 'yarn vendor start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint' 'yarn react lint'",
@@ -17,6 +17,7 @@
     "types": "CI=true concurrently --kill-others-on-fail 'yarn project types' 'yarn core types' 'yarn react types'",
     "core": "yarn workspace @app/core",
     "project": "yarn workspace @app/project",
+    "old": "yarn workspace @app/old",
     "react": "yarn workspace @app/react",
     "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
@@ -47,6 +48,7 @@
     "@testing-library/user-event": "^13.2.0",
     "@types/jest": "26.0.24",
     "@types/node": "16.3.3",
+    "@types/systemjs": "6.1.1",
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.28.3",
     "babel-jest": "26.6.0",
@@ -76,6 +78,7 @@
     "msw": "0.32.0",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
+    "single-spa-react": "4.2.1",
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-rational-declaration": "2.0.0",
@@ -85,7 +88,11 @@
     "stylelint-prettier": "1.2.0",
     "stylelint-scss": "3.20.0",
     "ts-jest": "27.0.3",
-    "ts-loader": "9.2.3"
+    "ts-loader": "9.2.3",
+    "webpack": "5.45.1",
+    "webpack-cli": "4.7.2",
+    "webpack-config-single-spa-react": "2.2.4",
+    "webpack-merge": "5.8.0"
   },
   "config": {
     "commitizen": {
