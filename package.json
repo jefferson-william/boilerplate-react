@@ -9,7 +9,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn vendor dev' 'yarn project dev' 'yarn react dev' 'yarn old dev'",
+    "dev": "concurrently --kill-others-on-fail 'yarn vendor dev' 'yarn project dev' 'yarn react dev' 'yarn angularjs-webpack dev'",
     "build": "concurrently --kill-others-on-fail 'yarn project build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start' 'yarn vendor start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint' 'yarn react lint'",
@@ -17,8 +17,8 @@
     "types": "CI=true concurrently --kill-others-on-fail 'yarn project types' 'yarn core types' 'yarn react types'",
     "core": "yarn workspace @app/core",
     "project": "yarn workspace @app/project",
-    "old": "yarn workspace @app/old",
-    "react": "yarn workspace @app/react",
+    "angularjs-webpack": "yarn workspace @app/angularjs-webpack",
+    "react": "yarn workspace @app/framework-react",
     "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
     "pretty-quick": "pretty-quick",
@@ -29,6 +29,7 @@
     "shared",
     "shared/vendor",
     "presentation/presenter/project",
+    "presentation/presenter/angularjs-webpack",
     "presentation/framework/react",
     "presentation/ui/react"
   ],
@@ -89,11 +90,7 @@
     "stylelint-prettier": "1.2.0",
     "stylelint-scss": "3.20.0",
     "ts-jest": "27.0.3",
-    "ts-loader": "9.2.3",
-    "webpack": "5.45.1",
-    "webpack-cli": "4.7.2",
-    "webpack-config-single-spa-react": "2.2.4",
-    "webpack-merge": "5.8.0"
+    "ts-loader": "9.2.3"
   },
   "config": {
     "commitizen": {
