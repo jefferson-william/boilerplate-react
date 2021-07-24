@@ -4,6 +4,8 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import { App } from '~/components/App'
 // import reportWebVitals from './report-web-vitals'
 
+import('~/components/Button')
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

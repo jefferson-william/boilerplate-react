@@ -1,6 +1,12 @@
 import React from 'react'
 import { Layout } from '~/components/Layout'
 
+// const Button = React.lazy(() => import('~/components/Button'))
+
 export const HomePage: React.FC = () => {
-  return <Layout>UI React Home</Layout>
+  return (
+    <Layout>
+      <div />
+    </Layout>
+  )
 }

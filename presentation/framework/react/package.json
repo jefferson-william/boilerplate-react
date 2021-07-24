@@ -7,6 +7,7 @@
     "dev": "react-app-rewired start",
     "build": "NODE_ENV=production react-app-rewired build",
     "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
     "eslint": "eslint --fix --color --ext=ts,tsx src",
     "test:coverage": "yarn test --coverage --verbose",
     "test:watch": "yarn test --watch",
@@ -54,6 +55,7 @@
     "@testing-library/react": "12.0.0",
     "@types/react-router-dom": "5.1.8",
     "@types/styled-components": "5.1.11",
+    "@types/webpack-assets-manifest": "5.0.1",
     "add": "2.0.6",
     "babel-jest": "26.6.0",
     "customize-cra": "1.0.0",
@@ -61,7 +63,9 @@
     "mutationobserver-shim": "0.3.7",
     "react-app-rewire-aliases": "0.2.0",
     "react-app-rewire-hot-loader": "2.0.1",
-    "react-app-rewired": "2.1.8"
+    "react-app-rewire-multiple-entry": "2.2.1",
+    "react-app-rewired": "2.1.8",
+    "webpack-assets-manifest": "5.0.6"
   },
   "browserslist": {
     "production": [

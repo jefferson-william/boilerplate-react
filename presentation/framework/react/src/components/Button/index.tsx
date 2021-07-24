@@ -7,3 +7,5 @@ export const Button: React.FC<HTMLAttributes<HTMLDivElement>> = ({ children, cla
     </div>
   )
 }
+
+export default Button
