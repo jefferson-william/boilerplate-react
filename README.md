@@ -26,6 +26,34 @@ yarn build
 yarn start
 ```
 
+### Single SPA
+
+Tudo começa em como expor o componente.
+
+A a estrutura do [boilerplate-react](https://github.com/jefferson-william/boilerplate-react) em especial por ter o `config-overrides.js`, conseguimos configurar o `webpack` para nos ajudar.
+
+É necessário criar um arquivo como `export-out.ts` para adicionar importações dinâmicas do `webpack` dos componentes a serem usados em outro _framework_ via **Single SPA**, tal como o `presentation/presenter/angularjs-webpack`.
+
+Veja o [vídeo](https://drive.google.com/file/d/1Aoakrt8SglcHeODOntsnpDtyfKV20emc/view?usp=sharing).
+
+Essas configurações adicionais no webpack via `config-overrides.js` fazem parte da solução conforme vídeo.
+
+```
+configuration.output.jsonpFunction = '@app/react'
+  configuration.output.libraryTarget = 'umd'
+  configuration.externals = {
+    rxjs: 'rxjs',
+    'single-spa-react': 'single-spa-react',
+  }
+```
+
+#### Refs
+
+- https://webpack.js.org/guides/code-splitting/#dynamic-imports
+- https://webpack.js.org/configuration/externals/#string
+- https://pt-br.reactjs.org/docs/optimizing-performance.html#single-file-builds
+- https://single-spa.js.org/
+
 ### Etc
 
 See [master](https://github.com/jefferson-william/boilerplate-react) branch.

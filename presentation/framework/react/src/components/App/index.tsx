@@ -8,6 +8,7 @@ import { GlobalStyles } from '~/styles/global'
 import { defaultTheme } from '~/styles/themes/default'
 import { DefaultSuspense } from '~/components/DefaultSuspense'
 import '~/i18n'
+import '~/export-out'
 
 const Application: React.FC = () => {
   return (

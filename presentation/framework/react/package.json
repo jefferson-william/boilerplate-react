@@ -63,9 +63,7 @@
     "mutationobserver-shim": "0.3.7",
     "react-app-rewire-aliases": "0.2.0",
     "react-app-rewire-hot-loader": "2.0.1",
-    "react-app-rewire-multiple-entry": "2.2.1",
-    "react-app-rewired": "2.1.8",
-    "webpack-assets-manifest": "5.0.6"
+    "react-app-rewired": "2.1.8"
   },
   "browserslist": {
     "production": [
