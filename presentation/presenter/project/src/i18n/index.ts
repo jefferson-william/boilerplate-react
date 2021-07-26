@@ -7,13 +7,15 @@ i18n
   .use(initReactI18next)
   .use(languageDetector)
   .use(backend)
-  .init(() => ({
+  .init({
     debug: true,
+    lng: 'ptbr',
     fallbackLng: 'ptbr',
-    keySeparator: true,
-    defaultNS: 'ptbr',
-    ns: 'ptbr',
-    fallbackNS: 'ptbr',
+    keySeparator: '.',
+    ns: 'translation',
+    defaultNS: 'translation',
+    fallbackNS: 'translation',
+    preload: ['ptbr'],
     interpolation: {
       escapeValue: false,
     },
@@ -22,10 +24,8 @@ i18n
       wait: false,
     },
     backend: {
-      loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`,
+      loadPath: () => `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`,
     },
-  }))
-
-i18n.changeLanguage('ptbr')
+  })
 
 export default i18n
