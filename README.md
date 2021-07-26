@@ -16,11 +16,11 @@
 ### Basic commands
 
 ```bash
-cp presentation/project/.env.example presentation/project/.env
-cp presentation/project/.env.production.local.example presentation/project/.env.production.local
+cp presentation/presenter/project/.env.example presentation/presenter/project/.env
+cp presentation/presenter/project/.env.production.local.example presentation/presenter/project/.env.production.local
 cp presentation/ui/react/.env.example presentation/ui/react/.env
-nvm use
-yarn dev
+nvm install ; nvm use
+yarn ; yarn dev
 yarn test
 yarn build
 yarn start
