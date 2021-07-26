@@ -1,31 +1,50 @@
 const rewireReactHotLoader = require('react-app-rewire-hot-loader')
-const { override, removeModuleScopePlugin } = require('customize-cra')
 const { paths } = require('react-app-rewired')
 const rewireAliases = require('react-app-rewire-aliases')
+const reactAppRewireBuildDev = require('react-app-rewire-build-dev')
+const { merge } = require('webpack-merge')
+const singleSpaDefaults = require('webpack-config-single-spa-react-ts')
+// const SystemJSPublicPathWebpackPlugin = require('systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin')
 const path = require('path')
 
-module.exports = override((config, env) => {
-  let configuration = { ...config }
+module.exports = {
+  webpack(config, env) {
+    let configuration = rewireAliases.aliasesOptions({
+      '@': path.resolve(__dirname, `${paths.appPublic}`),
+      '~': path.resolve(__dirname, `${paths.appSrc}`),
+    })(config, env)
 
-  removeModuleScopePlugin()(configuration)
+    if (env === 'development') {
+      configuration.resolve.alias['react-dom'] = '@hot-loader/react-dom'
+    }
 
-  configuration = rewireAliases.aliasesOptions({
-    '@': path.resolve(__dirname, `${paths.appPublic}`),
-    '~': path.resolve(__dirname, `${paths.appSrc}`),
-  })(config, env)
+    configuration = rewireReactHotLoader(configuration, env)
 
-  if (env === 'development') {
-    configuration.resolve.alias['react-dom'] = '@hot-loader/react-dom'
-  }
+    configuration = reactAppRewireBuildDev(config, env, {
+      outputPath: 'build',
+      basename: 'static',
+      hotReloadPort: 9000,
+    })
 
-  configuration = rewireReactHotLoader(configuration, env)
+    configuration.output.futureEmitAssets = false
+    configuration.output.jsonpFunction = '@react'
+    configuration.output.libraryTarget = 'system'
+    configuration.externals = {
+      rxjs: 'rxjs',
+    }
 
-  configuration.output.jsonpFunction = '@app/react'
-  configuration.output.libraryTarget = 'umd'
-  configuration.externals = {
-    rxjs: 'rxjs',
-    'single-spa-react': 'single-spa-react',
-  }
+    return configuration
+  },
+  devServer(configFunction) {
+    return (proxy, allowedHost) => {
+      const config = configFunction(proxy, allowedHost)
 
-  return configuration
-})
+      config.disableHostCheck = true
+      config.headers = {
+        'Access-Control-Allow-Origin': '*',
+      }
+
+      return config
+    }
+  },
+}

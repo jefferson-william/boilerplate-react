@@ -12,7 +12,7 @@ module.exports = (webpackConfigEnv, argv) => {
     disableHtmlGeneration: true,
   })
 
-  return merge(defaultConfig, {
+  const config = merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     plugins: [
       new HtmlWebpackPlugin({
@@ -25,4 +25,9 @@ module.exports = (webpackConfigEnv, argv) => {
       }),
     ],
   })
+
+  // console.log(config)
+  // throw new Error()
+
+  return config
 }

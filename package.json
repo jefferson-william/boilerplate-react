@@ -18,7 +18,7 @@
     "core": "yarn workspace @app/core",
     "project": "yarn workspace @app/project",
     "angularjs-webpack": "yarn workspace @app/angularjs-webpack",
-    "react": "yarn workspace @app/framework-react",
+    "react": "yarn workspace @app/react",
     "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
     "pretty-quick": "pretty-quick",
@@ -30,7 +30,6 @@
     "shared/vendor",
     "presentation/presenter/project",
     "presentation/presenter/angularjs-webpack",
-    "presentation/framework/react",
     "presentation/ui/react"
   ],
   "dependencies": {

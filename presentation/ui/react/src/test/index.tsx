@@ -1,7 +1,7 @@
 import { render, queries, RenderResult } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Providers } from '@app/framework-react/src/test/Providers'
-import { MyRenderOptions, MyRenderedOptions } from '@app/framework-react/src/test/props.d'
+import { Providers } from '@app/react/src/test/Providers'
+import { MyRenderOptions, MyRenderedOptions } from '@app/react/src/test/props.d'
 import customQueries, { MyQueries } from './custom-queries'
 
 export const myRender = (

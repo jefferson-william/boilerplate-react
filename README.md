@@ -53,6 +53,10 @@ configuration.output.jsonpFunction = '@app/react'
 - https://webpack.js.org/configuration/externals/#string
 - https://pt-br.reactjs.org/docs/optimizing-performance.html#single-file-builds
 - https://single-spa.js.org/
+- https://stackoverflow.com/a/61353105/4731097
+- https://www.npmjs.com/package/react-app-rewired#user-content-extended-configuration-options
+- https://gist.github.com/joeldenning/79f2592086ad132fae8ee5aae054c0b6
+- https://www.npmjs.com/package/react-app-rewire-build-dev
 
 ### Etc
 

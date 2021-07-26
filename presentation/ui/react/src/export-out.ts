@@ -1,3 +1,3 @@
-import(/* webpackChunkName: "@app/react/button.spa" */ '~/components/Button/single-spa')
+import(/* webpackChunkName: "@react/button" */ '~/components/Button/single-spa')
 
 export {}

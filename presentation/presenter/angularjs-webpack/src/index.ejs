@@ -19,7 +19,7 @@
   -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
+      content="default-src 'self' https: localhost:*; script-src <% if(isLocal) { %> 'unsafe-eval' <% } %> 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
     />
     <meta name="importmap-type" content="systemjs-importmap" />
     <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
@@ -34,10 +34,13 @@
 
     More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
   -->
+    <script></script>
+
     <script type="systemjs-importmap">
       {
         "imports": {
-          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+          "single-spa": "https://unpkg.com/single-spa",
+          "single-spa-react": "https://unpkg.com/single-spa-react"
         }
       }
     </script>
@@ -50,8 +53,7 @@
       {
         "imports": {
           "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js",
-          "@app/react/button": "http://localhost:4000/angularjs-root-config.js"
+          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js"
         }
       }
     </script>
@@ -63,13 +65,16 @@
   -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+    <script src="https://unpkg.com/import-map-overrides"></script>
     <% if (isLocal) { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/system.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/amd.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.js"></script>
     <% } else { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/system.min.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/amd.min.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/named-register.min.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.min.js"></script>
     <% } %>
   </head>
   <body>
