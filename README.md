@@ -26,13 +26,6 @@ yarn build
 yarn start
 ```
 
-To code without problems with eslint, do:
-
-```bash
-code ./core
-code ./presentation/presenter/project
-```
-
 ### Etc
 
 See [master](https://github.com/jefferson-william/boilerplate-react) branch.
