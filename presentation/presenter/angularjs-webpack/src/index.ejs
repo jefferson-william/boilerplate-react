@@ -40,7 +40,9 @@
       {
         "imports": {
           "single-spa": "https://unpkg.com/single-spa",
-          "single-spa-react": "https://unpkg.com/single-spa-react"
+          "single-spa-react": "https://unpkg.com/single-spa-react",
+          "react": "https://unpkg.com/react@17/umd/react.production.min.js",
+          "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
         }
       }
     </script>
@@ -53,7 +55,8 @@
       {
         "imports": {
           "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js"
+          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js",
+          "@react/button": "http://localhost:4500/react-button.js"
         }
       }
     </script>
@@ -69,10 +72,13 @@
     <% if (isLocal) { %>
     <script src="https://unpkg.com/systemjs/dist/system.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/amd.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/use-default.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/named-register.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.js"></script>
     <% } else { %>
     <script src="https://unpkg.com/systemjs/dist/system.min.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/amd.min.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/use-default.min.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/named-register.min.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.min.js"></script>
     <% } %>

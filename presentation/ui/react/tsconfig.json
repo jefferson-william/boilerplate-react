@@ -1,6 +1,11 @@
 {
-  "extends": "./tspaths.json",
-  "compilerOptions": {},
+  "extends": "@app/shared/config/tsconfig.base.json",
+  "compilerOptions": {
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "baseUrl": "."
+  },
   "include": [
     "src"
   ]

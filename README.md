@@ -40,7 +40,7 @@ Essas configurações adicionais no webpack via `config-overrides.js` fazem part
 
 ```
 configuration.output.jsonpFunction = '@app/react'
-  configuration.output.libraryTarget = 'umd'
+  configuration.output.libraryTarget = 'system'
   configuration.externals = {
     rxjs: 'rxjs',
     'single-spa-react': 'single-spa-react',
@@ -57,6 +57,10 @@ configuration.output.jsonpFunction = '@app/react'
 - https://www.npmjs.com/package/react-app-rewired#user-content-extended-configuration-options
 - https://gist.github.com/joeldenning/79f2592086ad132fae8ee5aae054c0b6
 - https://www.npmjs.com/package/react-app-rewire-build-dev
+- https://www.npmjs.com/package/craco-plugin-single-spa-application
+- https://stephencharlesweiss.com/single-spa-craco-react
+- https://github.com/hasanayan/craco-plugin-react-hot-reload
+- https://stackoverflow.com/a/62404606/4731097
 
 ### Etc
 
