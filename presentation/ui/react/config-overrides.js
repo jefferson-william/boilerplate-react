@@ -24,7 +24,7 @@ module.exports = {
     })
 
     configuration.output.futureEmitAssets = false
-    configuration.output.jsonpFunction = 'webpackJsonp@react'
+    configuration.output.jsonpFunction = '@react'
     configuration.output.libraryTarget = 'system'
     configuration.externals = {
       rxjs: 'rxjs',

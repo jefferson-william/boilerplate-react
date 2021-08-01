@@ -1,3 +1,7 @@
 {
-  "extends": "./tspaths.json"
+  "extends": "./tspaths.json",
+  "compilerOptions": {},
+  "include": [
+    "src"
+  ]
 }
