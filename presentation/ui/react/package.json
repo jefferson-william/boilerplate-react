@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "yarn start",
-    "start": "craco start",
-    "build": "craco build",
+    "dev": "craco start",
+    "start": "NODE_ENV=production npx serve -C -s build -p 5500",
+    "build": "NODE_ENV=production craco build",
     "test": "react-scripts test",
     "eslint": "eslint --fix --color --ext=ts,tsx src",
     "test:coverage": "yarn test --coverage --verbose",

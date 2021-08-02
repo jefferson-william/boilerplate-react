@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "yarn start",
-    "start": "webpack-dev-server --port 9000 --open --env isLocal",
+    "dev": "webpack-dev-server --port 9000 --open --env isLocal",
+    "start": "NODE_ENV=production npx serve -C -s dist -p 9500",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "prepare": "husky install",
-    "build": "webpack --mode=production"
+    "build": "NODE_ENV=production webpack --mode=production"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
