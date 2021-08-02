@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production npx serve -C -s build -p 3500",
+    "start": "NODE_ENV=production npx serve -C -s build -p 3000",
     "dev": "react-app-rewired start",
     "build": "NODE_ENV=production react-app-rewired build",
     "test": "react-app-rewired test",

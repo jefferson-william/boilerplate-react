@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "craco start",
-    "start": "NODE_ENV=production npx serve -C -s build -p 5500",
+    "start": "NODE_ENV=production npx serve -C -s build -p 5000",
     "build": "NODE_ENV=production craco build",
     "test": "react-scripts test",
     "eslint": "eslint --fix --color --ext=ts,tsx src",

@@ -9,3 +9,4 @@ build
 setupTests.ts
 service-worker.ts
 serviceWorkerRegistration.ts
+angularjs-root-config.ts
