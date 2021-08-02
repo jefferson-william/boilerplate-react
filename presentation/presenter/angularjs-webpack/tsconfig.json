@@ -1,5 +1,5 @@
 {
   "extends": "@app/shared/config/tsconfig.base.json",
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "compilerOptions": {},
+  "include": ["src/**/*"]
 }

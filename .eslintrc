@@ -37,11 +37,22 @@
     "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".js", ".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".js", ".ts", ".tsx"]
+      }
+    ],
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/explicit-function-return-type": 0,
     "import/prefer-default-export": 0,
-    "import/extensions": [0, "never", { "extensions": [".jsx", ".js"] }],
+    "import/extensions": [
+      0,
+      "never",
+      {
+        "extensions": [".jsx", ".js"]
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "off",
       {
