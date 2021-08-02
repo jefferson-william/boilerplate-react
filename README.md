@@ -1,6 +1,7 @@
 # Boilerplate React
 
 - [Basic commands](#basic-commands)
+- [Single SPA](#single-spa)
 - [Etc](#etc)
 
 | folders                                                                                                        | clean arch                                                                                                     |
@@ -19,7 +20,8 @@
 cp presentation/project/.env.example presentation/project/.env
 cp presentation/project/.env.production.local.example presentation/project/.env.production.local
 cp presentation/ui/react/.env.example presentation/ui/react/.env
-nvm use
+cp presentation/ui/react/.env.production.local.example presentation/ui/react/.env.production.local
+nvm use ; yarn
 yarn dev
 yarn test
 yarn build
@@ -28,27 +30,36 @@ yarn start
 
 ### Single SPA
 
-Tudo começa em como expor o componente.
+Inspirado no [craco-plugin-single-spa-application](https://www.npmjs.com/package/craco-plugin-single-spa-application)
+para Webpack, foi aplicado uma estrutura que permite ter a experiência de desenvolvimento do **CRA4**, mas com possibilidade
+de utilizar os componentes configurados no
+[entries.json](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/ui/react/entries.js)
+em outra aplicação via [Single SPA](https://single-spa.js.org/).
 
-A a estrutura do [boilerplate-react](https://github.com/jefferson-william/boilerplate-react) em especial por ter o `config-overrides.js`, conseguimos configurar o `webpack` para nos ajudar.
+Cada componente é exposto pelo
+[ui/react](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-single-spa/presentation/ui/react)
+via arquivo
+[single.spa.tsx](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/ui/react/src/components/Button/single.spa.tsx).
+Após, é importado via
+[SystemJS](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/presenter/angularjs-webpack/src/index.ejs#L44)
+e renderizado pelo
+[single-spa-react](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/ui/react/src/components/Button/single.spa.tsx#L3)
+e [single-spa-layout](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/presenter/angularjs-webpack/src/microfrontend-layout.html#L22)
+configurado
+[aqui](https://github.com/jefferson-william/boilerplate-react/blob/clean-arch-single-spa/presentation/presenter/angularjs-webpack/src/angularjs-root-config.ts#L3).
 
-É necessário criar um arquivo como `export-out.ts` para adicionar importações dinâmicas do `webpack` dos componentes a serem usados em outro _framework_ via **Single SPA**, tal como o `presentation/presenter/angularjs-webpack`.
+No [presenter/angularjs-webpack](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-single-spa/presentation/presenter/angularjs-webpack),
+você **não** verá _fast_ ou _hot reload_ nos componentes renderizados via `single-spa-react`.
 
-Veja o [vídeo](https://drive.google.com/file/d/1Aoakrt8SglcHeODOntsnpDtyfKV20emc/view?usp=sharing).
-
-Essas configurações adicionais no webpack via `config-overrides.js` fazem parte da solução conforme vídeo.
-
-```
-configuration.output.jsonpFunction = '@app/react'
-  configuration.output.libraryTarget = 'system'
-  configuration.externals = {
-    rxjs: 'rxjs',
-    'single-spa-react': 'single-spa-react',
-  }
-```
+O [presenter/project](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-single-spa/presentation/presenter/project)
+é só uma sobra do aplicado na branch
+[clean-arch-module-shared](https://github.com/jefferson-william/boilerplate-react/tree/clean-arch-module-shared/presentation/presenter/project).
 
 #### Refs
 
+- https://www.npmjs.com/package/craco-plugin-single-spa-application
+- https://stephencharlesweiss.com/single-spa-craco-react
+- https://github.com/hasanayan/craco-plugin-react-hot-reload
 - https://webpack.js.org/guides/code-splitting/#dynamic-imports
 - https://webpack.js.org/configuration/externals/#string
 - https://pt-br.reactjs.org/docs/optimizing-performance.html#single-file-builds
@@ -57,10 +68,6 @@ configuration.output.jsonpFunction = '@app/react'
 - https://www.npmjs.com/package/react-app-rewired#user-content-extended-configuration-options
 - https://gist.github.com/joeldenning/79f2592086ad132fae8ee5aae054c0b6
 - https://www.npmjs.com/package/react-app-rewire-build-dev
-- https://www.npmjs.com/package/craco-plugin-single-spa-application
-- https://stephencharlesweiss.com/single-spa-craco-react
-- https://github.com/hasanayan/craco-plugin-react-hot-reload
-- https://stackoverflow.com/a/62404606/4731097
 
 ### Etc
 
