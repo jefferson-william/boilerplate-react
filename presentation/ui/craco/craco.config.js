@@ -1,37 +1,28 @@
-const singleSpaApplicationPlugin = require('craco-plugin-single-spa-application')
 const reactHotReloadPlugin = require('craco-plugin-react-hot-reload')
-
-const cracoDefaultConfig = {
-  orgName: 'react',
-  orgPackagesAsExternal: false,
-  reactPackagesAsExternal: true,
-  minimize: process.env.NODE_ENV === 'production',
-  externals: ['react', 'react-router', 'react-router-dom', 'rxjs'],
-}
-
-function compileComponent(config) {
-  return {
-    plugin: singleSpaApplicationPlugin,
-    options: {
-      ...cracoDefaultConfig,
-      ...config,
-    },
-  }
-}
-
-const componentsToBuildButCanOnlyAddOne = [
-  compileComponent({
-    projectName: 'button',
-    entry: 'src/components/Button/single.spa.tsx',
-  }),
-]
+const singleSpaApplicationPlugin = require('./craco-plugin-single-spa-application')
+const externals = require('./externals.json')
+const entries = require('./entries.js')
 
 module.exports = {
   plugins: [
     {
       plugin: reactHotReloadPlugin,
     },
-    ...componentsToBuildButCanOnlyAddOne,
+    {
+      plugin: singleSpaApplicationPlugin,
+      options: {
+        orgName: 'react',
+        projectName: '[name]',
+        orgPackagesAsExternal: false,
+        reactPackagesAsExternal: true,
+        minimize: process.env.NODE_ENV === 'production',
+        externals,
+        entry: {
+          main: './src/index.tsx',
+          ...entries,
+        },
+      },
+    },
   ],
   webpack: {
     configure: (configuration) => {

@@ -1,4 +1,4 @@
-<single-spa-router>
+<single-spa-router mode="history" base="/">
   <!--
 
     This is the single-spa Layout Definition for your microfrontends.
@@ -21,7 +21,7 @@
     <route default>
       <application name="@single-spa/welcome"></application>
       <application name="@react/button"></application>
-      <!-- <div id="single-spa-application:@react/button"></div> -->
+      <application name="@react/text"></application>
     </route>
   </main>
 </single-spa-router>

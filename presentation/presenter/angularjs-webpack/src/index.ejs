@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Root Config</title>
-
-    <!--
-    Remove this if you only support browsers that support async/await.
-    This is needed by babel to share largeish helper code for compiling async/await in older
-    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
-  -->
-    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
-
     <!--
     This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
     Learn more about CSP policies at https://content-security-policy.com/#directive
@@ -34,53 +26,37 @@
 
     More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
   -->
-    <script></script>
-
     <script type="systemjs-importmap">
       {
         "imports": {
           "single-spa": "https://unpkg.com/single-spa",
-          "single-spa-react": "https://unpkg.com/single-spa-react",
           "react": "https://unpkg.com/react@17/umd/react.production.min.js",
           "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
         }
       }
     </script>
-
     <!-- Add your organization's prod import map URL to this script's src  -->
     <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
-
-    <% if (isLocal) { %>
     <script type="systemjs-importmap">
       {
         "imports": {
-          "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js",
-          "@react/button": "http://localhost:4500/react-button.js"
+          "@angularjs/root-config": "http://localhost:9000/root-config.js",
+          "@react/button": "http://localhost:5000/react-button.js",
+          "@react/text": "http://localhost:5000/react-text.js"
         }
       }
     </script>
-    <% } %>
-
     <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
-    <script src="https://unpkg.com/import-map-overrides"></script>
+    <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
     <% if (isLocal) { %>
     <script src="https://unpkg.com/systemjs/dist/system.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/amd.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/use-default.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/named-register.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.js"></script>
     <% } else { %>
     <script src="https://unpkg.com/systemjs/dist/system.min.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/amd.min.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/use-default.min.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/named-register.min.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/dynamic-import-maps.min.js"></script>
     <% } %>
   </head>
   <body>
