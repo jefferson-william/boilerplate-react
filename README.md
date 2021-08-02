@@ -21,7 +21,7 @@ cp presentation/presenter/project/.env.example presentation/presenter/project/.e
 cp presentation/presenter/project/.env.production.local.example presentation/presenter/project/.env.production.local
 cp presentation/ui/react/.env.example presentation/ui/react/.env
 cp presentation/ui/react/.env.production.local.example presentation/ui/react/.env.production.local
-nvm use ; yarn
+nvm install ; nvm use ; yarn
 yarn dev
 yarn test
 yarn build
