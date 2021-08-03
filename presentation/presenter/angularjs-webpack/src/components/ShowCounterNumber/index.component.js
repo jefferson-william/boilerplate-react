@@ -1,14 +1,18 @@
 import angular from 'angular'
-import { counterBehaviorSubject } from '@app/rxjs/counter'
+import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
 import template from './index.template.html'
 
 angular.module('app').component('showCounterNumber', {
   template,
-  controller: function ShowCounterNumberController($scope) {
-    counterBehaviorSubject.subscribe({
-      next: (data) => {
-        $scope.counter = data
-      },
+  controller: function ShowCounterNumberController($scope, $timeout) {
+    $scope.counter = counterInitialData
+
+    counterBehaviorSubject.subscribe((data) => {
+      $scope.counter = data
+
+      $timeout(() => {
+        $scope.$digest()
+      }, 0)
     })
   },
 })
