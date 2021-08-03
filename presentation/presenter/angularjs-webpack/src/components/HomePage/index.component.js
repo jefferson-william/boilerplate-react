@@ -4,11 +4,14 @@ import template from './index.template.html'
 
 angular.module('app').component('homePage', {
   template,
-  controller: function HomePageController($scope) {
+  controllerAs: 'HomePage',
+  controller: function HomePageController($scope, $timeout) {
     $scope.counter = counterInitialData
 
     counterBehaviorSubject.subscribe((data) => {
       $scope.counter = data
+
+      $timeout(() => $scope.$digest(), 0)
     })
   },
 })
