@@ -1,4 +1,3 @@
 module.exports = {
-  button: './src/components/Button/single.spa.tsx',
-  text: './src/components/Text/single.spa.tsx',
+  'increment-decrement': './src/components/IncrementDecrement/single.spa.tsx',
 }

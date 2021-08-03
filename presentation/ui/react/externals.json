@@ -3,5 +3,6 @@
   "react-router",
   "react-router-dom",
   "rxjs",
-  "styled-components"
+  "styled-components",
+  "@app/rxjs/counter"
 ]

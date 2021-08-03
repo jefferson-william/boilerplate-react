@@ -24,6 +24,7 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
     ],
+    externals: ['rxjs', '@app/rxjs/counter'],
   })
 
   // console.log(config)

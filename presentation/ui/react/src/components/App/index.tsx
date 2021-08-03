@@ -1,14 +1,12 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
-import Button from '../Button'
-import Text from '../Text'
+import IncrementDecrement from '../IncrementDecrement'
 
 const Application: React.FC = () => {
   return (
     <div className="App">
       <main>
-        <Button />
-        <Text />
+        <IncrementDecrement />
       </main>
     </div>
   )

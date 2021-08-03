@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import Text from '.'
+import IncrementDecrement from '.'
 
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Text,
+  rootComponent: IncrementDecrement,
   errorBoundary() {
     return <div>This renders when a catastrophic error occurs</div>
   },
