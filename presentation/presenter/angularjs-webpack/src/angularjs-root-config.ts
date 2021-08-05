@@ -13,6 +13,11 @@ function registerReactComponents() {
     (): any => System.import('@react/increment-decrement'),
     (location) => location.pathname === '/',
   )
+  registerApplication(
+    '@react/show-counter-number',
+    (): any => System.import('@react/show-counter-number'),
+    (location) => location.pathname === '/',
+  )
 }
 
 function execute() {

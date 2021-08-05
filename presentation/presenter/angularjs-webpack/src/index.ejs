@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Root Config</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <!--
     This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
     Learn more about CSP policies at https://content-security-policy.com/#directive
@@ -31,6 +32,7 @@
       {
         "imports": {
           "single-spa": "https://unpkg.com/single-spa@5.9.3/lib/umd/single-spa.min.js",
+          "single-spa-react": "https://unpkg.com/single-spa-react@4.3.1/lib/umd/single-spa-react.js",
           "react": "https://unpkg.com/react@17/umd/react.production.min.js",
           "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js",
           "rxjs": "https://unpkg.com/rxjs@7.3.0/dist/bundles/rxjs.umd.min.js"
@@ -44,6 +46,7 @@
         "imports": {
           "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js",
           "@react/increment-decrement": "http://localhost:5000/react-increment-decrement.js",
+          "@react/show-counter-number": "http://localhost:5000/react-show-counter-number.js",
           "@app/rxjs/counter": "http://localhost:8000/counter.js"
         }
       }

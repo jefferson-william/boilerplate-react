@@ -1,6 +1,7 @@
 import angular from 'angular'
 import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
 import template from './index.template.html'
+import './index.css'
 
 angular.module('app').component('homePage', {
   template,

@@ -18,7 +18,7 @@ const IncrementDecrement: React.FC = () => {
       <button type="button" onClick={() => counterBehaviorSubject.next({ ...counter, value: counter.value - 1 })}>
         DECREMENT
       </button>
-      <p>{counter.value}</p>
+      <p>react: {counter.value}</p>
     </div>
   )
 }

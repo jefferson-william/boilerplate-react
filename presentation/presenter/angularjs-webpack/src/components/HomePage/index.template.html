@@ -1,5 +1,27 @@
-<div>
-  <p><a href="/show-counter-number">Go to /show-counter-number page</a></p>
-  <show-counter-number></show-counter-number>
-  <p>{{ counter.value }}</p>
+<div class="home-page">
+  <div class="system-wrap">
+    <header>
+      <h1>Home</h1>
+    </header>
+    <nav>
+      <p><a href="/">Home</a></p>
+    </nav>
+  </div>
+  <div class="angular-wrap">
+    <p><b>Counter</b>: {{ counter.value }}</p>
+    <div class="show-counter-number-wrap">
+      <h6>show-counter-number component</h6>
+      <show-counter-number></show-counter-number>
+    </div>
+  </div>
+  <div class="react-wrap">
+    <div class="react-show-counter-number-wrap">
+      <h6>@react/show-counter-number component</h6>
+      <div id="react-show-counter-number"></div>
+    </div>
+    <div class="react-increment-decrement-wrap">
+      <h6>@react/increment-decrement component</h6>
+      <div id="react-increment-decrement"></div>
+    </div>
+  </div>
 </div>
