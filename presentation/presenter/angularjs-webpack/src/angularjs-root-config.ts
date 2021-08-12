@@ -7,18 +7,4 @@ import './components/ShowCounterNumber/index.component'
 import './routes/index.route'
 import { start } from 'single-spa'
 
-function registerReactComponents() {
-  // registerApplication(
-  //   'react-increment-decrement',
-  //   (): any => System.import('@react/increment-decrement'),
-  //   (location) => location.pathname === '/',
-  // )
-}
-
-function execute() {
-  registerReactComponents()
-
-  start()
-}
-
-execute()
+start()
