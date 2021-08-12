@@ -1,6 +1,6 @@
 import angular from 'angular'
 import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
-import { registerApplication } from 'single-spa'
+// import { registerApplication } from 'single-spa'
 import template from './index.template.html'
 
 angular.module('app').component('homePage', {
@@ -15,10 +15,10 @@ angular.module('app').component('homePage', {
       $timeout(() => $scope.$digest(), 0)
     })
 
-    registerApplication(
-      '@react/increment-decrement',
-      () => System.import('@react/increment-decrement'),
-      (location) => location.pathname === '/',
-    )
+    // registerApplication(
+    //   '@react/increment-decrement',
+    //   () => System.import('@react/increment-decrement'),
+    //   (location) => location.pathname === '/',
+    // )
   },
 })
