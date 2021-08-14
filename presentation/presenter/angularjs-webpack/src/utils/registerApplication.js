@@ -8,8 +8,8 @@ let applicationsRegisteredNames = []
 
 export const getRegisteredApplicationNames = () => Object.freeze(applicationsRegisteredNames)
 
-const activateApplicationByRoutes = (application) => (location) =>
-  application.routesToActivate.some((route) => location.pathname === route)
+const activateApplicationByRoutes = (application) => (location) => application.routesToActivate
+// application.routesToActivate.some((route) => location.pathname === route)
 
 export const unregisterApplication = (applicationName) => {
   const applicationIsRegistered = applicationsRegisteredNames.indexOf(applicationName) >= 0

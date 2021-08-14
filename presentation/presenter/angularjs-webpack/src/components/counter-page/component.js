@@ -1,13 +1,14 @@
 import angular from 'angular'
 import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
-import { reactApplicationsNames } from '../../utils/listApplicationsToRegister'
-import { registerApplication } from '../../utils/registerApplication'
+// import { reactApplicationsNames } from '../../utils/listApplicationsToRegister'
+// import { registerApplication } from '../../utils/registerApplication'
 import template from './template.html'
 
 angular.module('app').component('counterPage', {
   template,
   controllerAs: 'CounterPage',
   controller: function CounterPageController($scope, $timeout) {
+    $scope.reactIncrementDecrement = System.import('@react/increment-decrement')
     $scope.counter = counterInitialData
 
     counterBehaviorSubject.subscribe((data) => {
@@ -16,6 +17,6 @@ angular.module('app').component('counterPage', {
       $timeout(() => $scope.$digest(), 0)
     })
 
-    registerApplication(reactApplicationsNames.incrementDecrement)
+    // registerApplication(reactApplicationsNames.incrementDecrement)
   },
 })

@@ -1,3 +1,5 @@
+import 'single-spa-angularjs'
+import 'single-spa-angularjs/lib/parcel.js'
 import 'single-spa-react'
 import 'angular'
 import 'angular-route'
