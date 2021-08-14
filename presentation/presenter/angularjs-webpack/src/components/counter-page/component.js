@@ -1,7 +1,5 @@
 import angular from 'angular'
 import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
-// import { reactApplicationsNames } from '../../utils/listApplicationsToRegister'
-// import { registerApplication } from '../../utils/registerApplication'
 import template from './template.html'
 
 angular.module('app').component('counterPage', {
@@ -16,7 +14,5 @@ angular.module('app').component('counterPage', {
 
       $timeout(() => $scope.$digest(), 0)
     })
-
-    // registerApplication(reactApplicationsNames.incrementDecrement)
   },
 })
