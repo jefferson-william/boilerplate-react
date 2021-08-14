@@ -9,8 +9,8 @@ angular.module('app').config([
       .when('/', {
         template: '<home-page></home-page>',
       })
-      .when('/show-counter-number', {
-        template: '<show-counter-number></show-counter-number>',
+      .when('/counter', {
+        template: '<counter-page></counter-page>',
       })
       .otherwise('/')
   },

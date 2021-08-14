@@ -47,6 +47,7 @@
     "angular": "1.8.2",
     "angular-route": "1.8.2",
     "single-spa": "^5.9.3",
+    "single-spa-angularjs": "4.3.1",
     "single-spa-layout": "1.6.0"
   }
 }

@@ -13780,6 +13780,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+single-spa-angularjs@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/single-spa-angularjs/-/single-spa-angularjs-4.3.1.tgz#43d03f2c07db9d6da1366f7234294259af8e1f45"
+  integrity sha512-YEEQO1wONnhKBtjZgZpDiOm9oAtJkuy8exl7nYGkM2NFhMpFMrW4+datAZTKn12s7Yis0cV8Zay2vtVsTAg13A==
+
 single-spa-layout@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/single-spa-layout/-/single-spa-layout-1.6.0.tgz#0cad8b691a2c0a0d494e64adae4bfa1143c6130c"

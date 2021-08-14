@@ -1,13 +1,33 @@
-import { registerApplication as spaRegisterApplication } from 'single-spa'
+import {
+  unregisterApplication as spaUnregisterApplication,
+  registerApplication as spaRegisterApplication,
+} from 'single-spa'
+import { listApplications } from './listApplicationsToRegister'
 
-const applicationsRegisteredNames = []
+let applicationsRegisteredNames = []
 
 export const getRegisteredApplicationNames = () => Object.freeze(applicationsRegisteredNames)
 
-export const registerApplication = (name, activate) => {
-  const applicationIsRegistered = applicationsRegisteredNames.indexOf(name) >= 0
+const activateApplicationByRoutes = (application) => (location) =>
+  application.routesToActivate.some((route) => location.pathname === route)
+
+export const unregisterApplication = (applicationName) => {
+  const applicationIsRegistered = applicationsRegisteredNames.indexOf(applicationName) >= 0
+  if (applicationIsRegistered) {
+    applicationsRegisteredNames = applicationsRegisteredNames.filter((appName) => appName !== applicationName)
+    spaUnregisterApplication(applicationName)
+  }
+}
+
+export const registerApplication = (applicationName) => {
+  const application = listApplications[applicationName]
+  const applicationIsRegistered = applicationsRegisteredNames.indexOf(applicationName) >= 0
   if (!applicationIsRegistered) {
-    applicationsRegisteredNames.push(name)
-    spaRegisterApplication(name, () => System.import(name), activate)
+    applicationsRegisteredNames.push(applicationName)
+    spaRegisterApplication(
+      applicationName,
+      () => System.import(applicationName),
+      activateApplicationByRoutes(application),
+    )
   }
 }
