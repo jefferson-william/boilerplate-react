@@ -9,7 +9,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn vendor dev' 'yarn rxjs dev' 'yarn project dev' 'yarn react dev' 'yarn angularjs-webpack dev'",
+    "dev": "concurrently --kill-others-on-fail 'yarn vendor dev' 'yarn rxjs dev' 'yarn project dev' 'yarn webpack dev' 'yarn angularjs-webpack dev'",
     "build": "concurrently --kill-others-on-fail 'yarn project build' 'yarn angularjs-webpack build' 'yarn react build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start' 'yarn angularjs-webpack start' 'yarn react start' 'yarn vendor start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn core lint' 'yarn react lint'",
@@ -20,6 +20,8 @@
     "angularjs-webpack": "yarn workspace @app/angularjs-webpack",
     "rxjs": "yarn workspace @app/rxjs",
     "react": "yarn workspace @app/react",
+    "craco": "yarn workspace @app/craco",
+    "webpack": "yarn workspace @app/webpack",
     "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
     "pretty-quick": "pretty-quick",
@@ -31,6 +33,8 @@
     "shared/vendor",
     "presentation/presenter/project",
     "presentation/presenter/angularjs-webpack",
+    "presentation/builder/craco",
+    "presentation/builder/webpack",
     "presentation/ui/react",
     "presentation/store/rxjs"
   ],

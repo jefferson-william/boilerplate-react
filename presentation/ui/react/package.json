@@ -3,60 +3,28 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "craco start",
-    "start": "NODE_ENV=production npx serve -C -s build -p 5000",
-    "build": "NODE_ENV=production craco build",
-    "test": "react-scripts test",
-    "eslint": "eslint --fix --color --ext=ts,tsx src",
-    "test:coverage": "yarn test --coverage --verbose",
-    "test:watch": "yarn test --watch",
-    "coverage": "yarn test:coverage",
-    "pre-commit": "lint-staged",
-    "types": "tsc --noEmit",
-    "lint": "yarn eslint ; yarn stylelint",
-    "stylelint": "stylelint '**/*.{css,scss,tsx}'",
-    "fix-styles": "yarn stylelint --quiet --fix"
+    "dev": "echo none",
+    "start": "echo none",
+    "build": "echo none"
   },
   "dependencies": {
-    "@material-ui/core": "4.12.3",
-    "@material-ui/icons": "4.11.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "history": "5.0.0",
-    "i18next": "20.3.5",
-    "i18next-browser-languagedetector": "6.1.2",
-    "i18next-xhr-backend": "3.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "11.11.4",
     "react-scripts": "4.0.3",
     "styled-components": "5.3.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "single-spa-react": "^4.1.0",
+    "systemjs-webpack-interop": "2.3.7",
+    "typescript": "^4.1.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/styled-components": "5.1.11",
     "craco-plugin-react-hot-reload": "0.1.0",
     "craco-plugin-single-spa-application": "^1.0.6",
-    "msw": "0.33.2",
-    "single-spa-react": "^4.1.0",
-    "systemjs-webpack-interop": "2.3.7"
+    "msw": "0.33.2"
   }
 }

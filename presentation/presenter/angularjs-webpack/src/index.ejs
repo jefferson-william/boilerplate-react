@@ -42,12 +42,13 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "@angularjs/root-config": "http://localhost:9000/angularjs-root-config.js",
-          "@react/increment-decrement": "http://localhost:5000/react-increment-decrement.js",
+          "@angularjs/root-config": "http://localhost:9001/angularjs-root-config.js",
+          "@react/increment-decrement": "http://localhost:5000/IncrementeDecrement-1.0.0.js",
           "@app/rxjs/counter": "http://localhost:8000/counter.js"
         }
       }
     </script>
+    <!-- <script type="systemjs-importmap" src="http://localhost:5000/manifest.json"> -->
     <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
@@ -56,7 +57,7 @@
     <% if (isLocal) { %>
     <script src="https://unpkg.com/systemjs/dist/system.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/amd.js"></script>
-    <script src="https://unpkg.com/systemjs/dist/extras/named-exports.js"></script>
+    <script src="https://unpkg.com/systemjs/dist/extras/named-exports.min.js"></script>
     <script src="https://unpkg.com/systemjs/dist/extras/use-default.js"></script>
     <% } else { %>
     <script src="https://unpkg.com/systemjs/dist/system.min.js"></script>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
-import IncrementDecrement from '../IncrementDecrement'
+import IncrementDecrement from '@app/react/components/IncrementDecrement'
 
 const Application: React.FC = () => {
   return (

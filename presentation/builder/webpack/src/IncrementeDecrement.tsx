@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import IncrementDecrement from '.'
+import IncrementDecrement from '@app/react/components/IncrementDecrement'
 
 const lifecycles = singleSpaReact({
   React,

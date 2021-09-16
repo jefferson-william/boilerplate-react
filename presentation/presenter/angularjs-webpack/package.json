@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --port 9000 --env isLocal",
-    "start": "NODE_ENV=production npx serve -C -s dist -p 9000",
+    "dev": "webpack-dev-server --port 9001 --env isLocal",
+    "start": "NODE_ENV=production npx serve -C -s dist -p 9001",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
