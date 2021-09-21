@@ -1,5 +1,5 @@
 {
-  "extends": "@app/shared/config/tsconfig.base.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "typeRoots": ["../node_modules/@types"],
     "baseUrl": ".",
