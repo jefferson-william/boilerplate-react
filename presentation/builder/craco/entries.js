@@ -1,3 +1,3 @@
 module.exports = {
-  'increment-decrement': './src/components/IncrementDecrement/single.spa.tsx',
+  'increment-decrement': './src/components/IncrementDecrement/index.tsx',
 }
