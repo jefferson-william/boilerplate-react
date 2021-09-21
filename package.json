@@ -20,7 +20,6 @@
     "angularjs-webpack": "yarn workspace @app/angularjs-webpack",
     "rxjs": "yarn workspace @app/rxjs",
     "react": "yarn workspace @app/react",
-    "craco": "yarn workspace @app/craco",
     "webpack": "yarn workspace @app/webpack",
     "vendor": "yarn workspace @app/vendor",
     "pre-commit": "lint-staged",
@@ -33,7 +32,6 @@
     "shared/vendor",
     "presentation/presenter/project",
     "presentation/presenter/angularjs-webpack",
-    "presentation/builder/craco",
     "presentation/builder/webpack",
     "presentation/ui/react",
     "presentation/store/rxjs"
