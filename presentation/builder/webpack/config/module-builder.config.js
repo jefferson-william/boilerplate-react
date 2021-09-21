@@ -1,8 +1,11 @@
+const storeEntries = require('@app/core/store/entries')
+
 const modules = [
   {
     name: 'IncrementeDecrement',
     path: './src/IncrementeDecrement.tsx',
   },
+  ...storeEntries,
 ]
 
 const getModules = () => {

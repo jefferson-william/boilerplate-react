@@ -14,6 +14,8 @@
     "lint": "yarn eslint",
     "cz": "cz"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "7.3.0"
+  },
   "devDependencies": {}
 }

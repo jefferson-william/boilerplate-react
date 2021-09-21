@@ -1,4 +1,0 @@
-{
-  "extends": "@app/shared/config/tsconfig.base.json",
-  "include": ["**/*"]
-}
