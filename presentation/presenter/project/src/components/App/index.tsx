@@ -2,12 +2,12 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
-import { GlobalStyles } from '@app/react/styles/global'
-import { defaultTheme } from '@app/react/styles/themes/default'
+import { DefaultSuspense } from '~/components/DefaultSuspense'
+import { GlobalStyles } from '~/styles/global'
+import { defaultTheme } from '~/styles/themes/default'
 import history from '~/lib/history'
 import '@app/react/i18n'
 import { Routers } from '~/routers'
-import { DefaultSuspense } from '~/components/DefaultSuspense'
 
 const Application: React.FC = () => {
   return (

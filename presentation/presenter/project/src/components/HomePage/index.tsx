@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Header } from '~/components/Header'
-import { Layout } from '~/components/Layout'
+import { Header } from '@app/react/components/Header'
+import { Layout } from '@app/react/components/Layout'
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation()

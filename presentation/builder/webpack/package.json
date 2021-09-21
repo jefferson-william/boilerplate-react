@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-watch": "webpack --watch",
-    "dev": "concurrently  \"webpack --watch\" \"serve --cors -p 5000 ./dist\" -n rollup,dist -c yellow,blue"
+    "dev": "concurrently  \"webpack --watch\" \"serve --cors -p 5000 ./dist\" -n webpack,dist -c yellow,blue",
+    "start": "serve --cors -p 5000 ./dist"
   },
   "dependencies": {
     "@app/react": "*",

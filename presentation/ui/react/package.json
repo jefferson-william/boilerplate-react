@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "echo none",
     "start": "echo none",
-    "build": "echo none"
+    "build": "echo none",
+    "lint": "echo none"
   },
   "dependencies": {
     "react": "^17.0.1",
