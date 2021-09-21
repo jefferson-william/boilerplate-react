@@ -30,11 +30,7 @@
     "core",
     "shared",
     "shared/vendor",
-    "presentation/presenter/project",
-    "presentation/presenter/angularjs-webpack",
-    "presentation/builder/webpack",
-    "presentation/ui/react",
-    "presentation/store/rxjs"
+    "presentation/**/*"
   ],
   "dependencies": {
     "concurrently": "6.2.0",
