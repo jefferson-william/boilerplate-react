@@ -1,10 +1,11 @@
 const path = require('path')
+const externals = require('./externals')
 const { getModules } = require('./config/module-builder.config')
 
 module.exports = {
   mode: 'production',
   entry: getModules(),
-  externals: ['react', 'react-router', 'react-router-dom', 'rxjs', 'styled-components', '@app/rxjs/counter'],
+  externals,
   output: {
     filename: '[name].[contenthash].js',
     library: { type: 'system' },
