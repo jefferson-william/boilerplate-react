@@ -1,6 +1,6 @@
 module.exports = [
   {
     name: 'counter',
-    path: '@app/core/store/counter/index.ts',
+    path: '@app/core/store/rxjs/counter/index.ts',
   },
 ]
