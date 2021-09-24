@@ -9,7 +9,7 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn webpack dev' 'yarn angularjs-webpack dev'",
+    "dev": "concurrently --kill-others-on-fail 'yarn webpack dev' 'yarn project dev' 'yarn angularjs-webpack dev'",
     "build": "concurrently --kill-others-on-fail 'yarn angularjs-webpack build' 'yarn webpack build'",
     "start": "concurrently --kill-others-on-fail 'yarn project start' 'yarn angularjs-webpack start' 'yarn webpack start'",
     "lint": "concurrently --kill-others-on-fail 'yarn project lint' 'yarn angularjs-webpack lint' 'yarn core lint' 'yarn react lint'",
