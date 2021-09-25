@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
+import { counterBehaviorSubject, counterInitialData } from '@app/core/store/rxjs/counter'
 
 const IncrementDecrement: React.FC = () => {
   const [counter, setCounter] = useState<typeof counterInitialData>(counterInitialData)

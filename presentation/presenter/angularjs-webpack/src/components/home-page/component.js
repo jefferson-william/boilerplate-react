@@ -1,5 +1,5 @@
 import angular from 'angular'
-import { counterBehaviorSubject, counterInitialData } from '@app/rxjs/counter'
+import { counterBehaviorSubject, counterInitialData } from '@app/core/store/rxjs/counter'
 import template from './template.html'
 
 angular.module('app').component('homePage', {
