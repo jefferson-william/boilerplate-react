@@ -6,7 +6,7 @@ angular.module('app').component('homePage', {
   template,
   controllerAs: 'HomePage',
   controller: function HomePageController($scope, $timeout) {
-    $scope.reactIncrementDecrement = System.import('@react/increment-decrement')
+    $scope.reactIncrementDecrement = System.import('@app/react/components/IncrementDecrement')
     $scope.counter = counterInitialData
 
     counterBehaviorSubject.subscribe((data) => {

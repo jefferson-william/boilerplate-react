@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge')
 const singleSpaDefaults = require('webpack-config-single-spa-ts')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const externals = require('./externals')
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = 'angularjs'
@@ -24,11 +25,8 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
     ],
-    externals: ['rxjs', '@app/rxjs/counter'],
+    externals,
   })
-
-  // console.log(config)
-  // throw new Error()
 
   return config
 }

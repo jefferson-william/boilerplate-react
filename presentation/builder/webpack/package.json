@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-watch": "webpack --watch",
-    "dev": "concurrently  \"webpack --watch\" \"serve --cors -p 5000 ./dist\" -n webpack,dist -c yellow,blue",
+    "dev": "concurrently \"webpack --watch\" \"serve --cors -p 5000 ./dist\" -n webpack,dist -c yellow,blue",
     "start": "serve --cors -p 5000 ./dist"
   },
   "dependencies": {
@@ -28,8 +28,10 @@
     "babel-loader": "8.2.2",
     "babel-polyfill": "6.26.0",
     "concurrently": "6.2.0",
+    "dotenv": "10.0.0",
     "single-spa-react": "4.1.0",
     "webpack": "5.39.0",
-    "webpack-cli": "4.7.2"
+    "webpack-cli": "4.7.2",
+    "webpack-import-map-plugin": "jefferson-william/webpack-import-map-plugin#b687337"
   }
 }

@@ -37,18 +37,15 @@
         }
       }
     </script>
-    <!-- Add your organization's prod import map URL to this script's src  -->
-    <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
     <script type="systemjs-importmap">
       {
         "imports": {
-          "@angularjs/root-config": "http://localhost:9001/angularjs-root-config.js",
-          "@react/increment-decrement": "http://localhost:5000/IncrementeDecrement.99fdec2068ce2743c380.js",
-          "@app/rxjs/counter": "http://localhost:5000/counter.47b554ea3a0eba0263d4.js"
+          "@angularjs/root-config": "http://localhost:9001/angularjs-root-config.js"
         }
       }
     </script>
-    <!-- <script type="systemjs-importmap" src="http://localhost:5000/manifest.json"> -->
+    <script type="systemjs-importmap" src="http://localhost:5000/webpack-import-map.json"></script>
+
     <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
