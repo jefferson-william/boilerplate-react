@@ -5,13 +5,17 @@ import template from './template.html'
 angular.module('app').component('showCounterNumber', {
   template,
   controllerAs: 'ShowCounterNumber',
-  controller: function ShowCounterNumberController($scope, $timeout) {
-    $scope.counter = counterInitialData
+  controller: [
+    '$scope',
+    '$timeout',
+    function ShowCounterNumberController($scope, $timeout) {
+      $scope.counter = counterInitialData
 
-    counterBehaviorSubject.subscribe((data) => {
-      $scope.counter = data
+      counterBehaviorSubject.subscribe((data) => {
+        $scope.counter = data
 
-      $timeout(() => $scope.$digest(), 0)
-    })
-  },
+        $timeout(() => $scope.$digest(), 0)
+      })
+    },
+  ],
 })

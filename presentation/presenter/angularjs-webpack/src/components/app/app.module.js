@@ -4,6 +4,9 @@ import angular from 'angular'
 
 angular.module('app', ['ngRoute', 'single-spa-angularjs'])
 
-angular.module('app').run(function Run($rootScope) {
-  $rootScope.mountRootParcel = mountRootParcel
-})
+angular.module('app').run([
+  '$rootScope',
+  function Run($rootScope) {
+    $rootScope.mountRootParcel = mountRootParcel
+  },
+])

@@ -4,12 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --port 9001 --env isLocal",
-    "start": "NODE_ENV=production npx serve -C -s dist -p 9001",
+    "start": "NODE_ENV=production serve -C -s dist -p 9001",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "build": "NODE_ENV=production webpack --mode=production"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/webpack-env": "^1.16.2",
+    "angular": "1.8.2",
+    "angular-route": "1.8.2",
+    "serve": "12.0.1",
+    "single-spa": "^5.9.3",
+    "single-spa-angularjs": "4.3.1",
+    "single-spa-layout": "1.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -40,14 +50,5 @@
     "webpack-config-single-spa-ts": "^3.0.0",
     "webpack-dev-server": "^4.0.0-beta.0",
     "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
-    "@types/jest": "^26.0.24",
-    "@types/webpack-env": "^1.16.2",
-    "angular": "1.8.2",
-    "angular-route": "1.8.2",
-    "single-spa": "^5.9.3",
-    "single-spa-angularjs": "4.3.1",
-    "single-spa-layout": "1.6.0"
   }
 }
