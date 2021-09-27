@@ -18,6 +18,7 @@
 
 ```bash
 cp presentation/presenter/cra/.env.example presentation/presenter/cra/.env
+cp .env.example .env
 nvm install ; nvm use ; yarn
 yarn dev
 yarn test
