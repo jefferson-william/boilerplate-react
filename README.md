@@ -17,8 +17,7 @@
 ### Basic commands
 
 ```bash
-cp presentation/presenter/project/.env.example presentation/presenter/project/.env
-cp presentation/ui/react/.env.example presentation/ui/react/.env
+cp presentation/presenter/cra/.env.example presentation/presenter/cra/.env
 nvm install ; nvm use ; yarn
 yarn dev
 yarn test
